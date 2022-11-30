@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2468538121385660350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2468538121385660345}
+  - component: {fileID: 2468538121385660347}
+  - component: {fileID: 2468538121385660348}
+  - component: {fileID: 2468538121385660349}
+  m_Layer: 0
+  m_Name: ManagerCombatSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2468538121385660345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468538121385660350}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5957651, y: 3.078351, z: 3.2102923}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2468538121385660347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468538121385660350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e50885f361a66346bc0e6d871ec34f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2468538121385660348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468538121385660350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761cecec53cf7f4439407c2198b557c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prediction: 0
+  score: 0
+--- !u!114 &2468538121385660349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468538121385660350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9824ba6efd64dd4f98c2495ec28ea43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellcastKey: 308
+  drawController: {fileID: 0}
+  cursorPanel: {fileID: 0}
+  spellbook:
+  - {fileID: 8252529180839723103, guid: e0bb881b6c25e9f4dbdf927845112d70, type: 3}
+  - {fileID: 6172775381969061405, guid: 9325e538dfd3c1c4280584ca812e215c, type: 3}
+  - {fileID: 9166766358866127967, guid: d8ba6c4813b42964991e4d98d132dda0, type: 3}
+  - {fileID: 3522958485000417892, guid: 299acff0590889f48b51877b4f9e5eaa, type: 3}
+  - {fileID: 9123613040944345663, guid: edfdc8441613844428983934a7dc9910, type: 3}
+  - {fileID: 8011997461708116996, guid: 6a760b9d8cba00747a73dab51c62dcb6, type: 3}
+  - {fileID: 7262854755714560620, guid: 8a73a7b2d42dcdb42b16ecae7310e71f, type: 3}
+  - {fileID: 4747249660370334602, guid: 68d2120522416bd4794ffc907bdbc316, type: 3}
+  - {fileID: 6168464762355130759, guid: 2027f561e52fce548a81a53ca14637bc, type: 3}
+  - {fileID: 7364643457524870508, guid: 9975d8129edf09c40a58d81f5ebf0c29, type: 3}
+  negativeEffects:
+  - {fileID: 3100792854252394578, guid: 01798eef930f6fb488216c07b118f99e, type: 3}
+  - {fileID: 3130055798086387714, guid: 7edd2c22e862f57428b3680be42b84f2, type: 3}
+  - {fileID: 8053113872224006808, guid: 859a10a475f2aeb4aa00a99c69c21174, type: 3}
+  - {fileID: 8785928173362479926, guid: 9585b0505c2b3db4aabd68d757be1730, type: 3}
+  - {fileID: 5576927712092806137, guid: 848471bab76b1dc4284d12aee09ed9c5, type: 3}
+  startCastingPosition: {x: 0, y: 0, z: 0}
+  isSpellReady: 0
+  isCasting: 0
+  isAbleToCast: 1
+  effectBlockCasting: 0
+  effectBlockMoving: 0

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740c548c0c19e324793ae644d27a2bc5, type: 3}
+  m_Name: JinnBaseDialogue
+  m_EditorClassIdentifier: 
+  elementsToUnlock: []
+  elementsToLock: []
+  sentence: 
+  responses:
+  - sentence: "Strasznie \u0142adna dzisiaj pogoda"
+    nextDialogue: {fileID: 11400000, guid: 713509dd2324fa848a4452e16b1b08a6, type: 2}
+  - sentence: "Widz\u0119, \u017Ce jestes tutaj Totalnym Szefem, czy mog\u0119 co\u015B
+      dla Ciebie zrobi\u0107?"
+    nextDialogue: {fileID: 11400000, guid: 4eb006380c955e940916f9989c153422, type: 2}
+  baseTalkable: 0
+  canExit: 1
