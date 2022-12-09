@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DVSN.GameManagment;
+using Unity.VisualScripting;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -42,7 +43,8 @@ namespace DVSN.Plot
         {
             INVENTORY = 0,
             WORLDWIDE = 1,
-            CHARACTER = 2
+            CHARACTER = 2,
+            DROP = 3
         }
     }
 
@@ -66,6 +68,8 @@ namespace DVSN.Plot
                     break;
                 case Item.UnlockType.CHARACTER:
                     script.baseOwnerName = EditorGUILayout.TextField("Base Owner Name: ", script.baseOwnerName);
+                    break;
+                case Item.UnlockType.DROP:
                     break;
             }
         }

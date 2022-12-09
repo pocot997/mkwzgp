@@ -28,6 +28,7 @@ namespace DVSN.Plot
         protected void FinishQuest()
         {
             Managers.Player.experience += experienceReward;
+            Managers.Quest.activeQuests.Remove(this);
 
             InterfereWithPlot();
         }

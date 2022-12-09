@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 740c548c0c19e324793ae644d27a2bc5, type: 3}
-  m_Name: JackFinalAcceptQuestDialogue
+  m_Name: JoshHereIsYourMoneyDialogue
   m_EditorClassIdentifier: 
-  elementsToUnlock:
-  - {fileID: 11400000, guid: e0b2d0f7d13f8ce4d83fafb074f0265e, type: 2}
+  elementsToUnlock: []
   elementsToLock: []
-  sentence: "Jeste\u015B super"
-  responses: []
-  baseTalkable: 0
-  canExit: 1
+  sentence: "Jestem twoim dozgonnym d\u0142u\u017Cnikiem"
+  responses:
+  - sentence: "Ca\u0142a przyjemno\u015B\u0107 po mojej stronie"
+    nextDialogue: {fileID: 11400000, guid: 33e07ade5dc90f9419b2496e0d0a6cd9, type: 2}
+  baseTalkable: 2
+  canExit: 0

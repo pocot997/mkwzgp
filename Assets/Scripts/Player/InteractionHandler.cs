@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DVSN.Plot;
 using DVSN.GameManagment;
+using DVSN.Enemy;
 
 namespace DVSN.Player
 {
@@ -19,6 +20,15 @@ namespace DVSN.Player
                 if (interactionComponent != null)
                 {
                     interactionComponent.Interact();
+                }
+            }
+            else if(Input.GetKeyDown(KeyCode.K))
+            {
+                EnemyAi enemyAi = CatchObject<EnemyAi>();
+
+                if (enemyAi != null)
+                {
+                    enemyAi.TakeDamage(1000);
                 }
             }
         }

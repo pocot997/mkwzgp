@@ -39,7 +39,9 @@ namespace DVSN.Plot
 
         internal void CheckForAllQuests(PlotElement plotElement)
         {
-            foreach(Quest quest in activeQuests)
+            List<Quest> questsToCheck = new List<Quest>(activeQuests);
+
+            foreach(Quest quest in questsToCheck)
             {
                 quest.Check(plotElement);
             }

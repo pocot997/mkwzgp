@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementsToUnlock: []
   elementsToLock: []
-  sentence: 
+  sentence: ...
   responses:
   - sentence: "Widz\u0119, \u017Ce co\u015B ci\u0119 trapi"
     nextDialogue: {fileID: 11400000, guid: 9754199a41df7c3478f01a8416d9cd7d, type: 2}
   - sentence: "\u0141adna dzisiaj pogoda"
     nextDialogue: {fileID: 11400000, guid: 713509dd2324fa848a4452e16b1b08a6, type: 2}
+  - sentence: "Zabi\u0142em te wszysttkie Mro\u017C\u0105ce Krew w \u017By\u0142ach
+      stwory"
+    nextDialogue: {fileID: 11400000, guid: df0e1436336758b45b998827b1f3c633, type: 2}
   baseTalkable: 0
   canExit: 1

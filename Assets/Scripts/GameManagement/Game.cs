@@ -54,6 +54,8 @@ namespace DVSN.GameManagment
                             }
                         }
                         break;
+                    case Item.UnlockType.DROP:
+                        break;
                 }
             }
         }

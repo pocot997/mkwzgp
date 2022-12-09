@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041f5b3a4c036dc4ba9a163e4273ab35, type: 3}
+  m_Name: PickUpMoneyItemQuest
+  m_EditorClassIdentifier: 
+  elementsToUnlock:
+  - {fileID: 11400000, guid: fb86149bf6270e44db3e426ef1c5cf3c, type: 2}
+  elementsToLock: []
+  questName: Skradziona mamona 3
+  description: "Gdzies tu powinna le\u017Ce\u0107 skradziona mamona. Podnie\u015B
+    j\u0105 i po sprawie"
+  experienceReward: 0
+  finishingItem: {fileID: 11400000, guid: 987d5fdead83a9e418546cadcd99a169, type: 2}

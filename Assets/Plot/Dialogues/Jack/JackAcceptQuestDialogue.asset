@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementsToUnlock: []
   elementsToLock: []
-  sentence: "Je\u017Celi m\xF3g\u0142by\u015B zaj\u0105\u0107 si\u0119 tymi stworami
-    by\u0142bym ci dozgonnie wdzi\u0119czny"
+  sentence: "Je\u017Celi m\xF3g\u0142by\u015B zaj\u0105\u0107 si\u0119 tymi Mro\u017C\u0105cymi
+    Krew w \u017By\u0142ach potworami by\u0142bym ci dozgonnie wdzi\u0119czny"
   responses:
   - sentence: Jasne nie ma problemu
     nextDialogue: {fileID: 11400000, guid: 4d25574af1ccefb4295ddbb938d95908, type: 2}

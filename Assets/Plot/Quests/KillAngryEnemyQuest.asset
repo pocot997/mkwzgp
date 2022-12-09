@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62777554b7ba614aa69208fc8d92992, type: 3}
+  m_Name: KillAngryEnemyQuest
+  m_EditorClassIdentifier: 
+  elementsToUnlock:
+  - {fileID: 11400000, guid: b580a5a04e8f12c419e9a62180889348, type: 2}
+  elementsToLock: []
+  questName: Skradziona mamona 2
+  description: "Jaki\u015B pod\u0142y typ ukrad\u0142 Joshowi mamon\u0119. Znajd\u017A
+    go i dokonaj pacyfikajci delikwenta"
+  experienceReward: 0
+  killEnemyType: 1
+  numberOfEnemiesToKill: 1

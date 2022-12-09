@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 740c548c0c19e324793ae644d27a2bc5, type: 3}
-  m_Name: JackFinalAcceptQuestDialogue
+  m_Name: JoshAcceptQuestDialogue
   m_EditorClassIdentifier: 
   elementsToUnlock:
-  - {fileID: 11400000, guid: e0b2d0f7d13f8ce4d83fafb074f0265e, type: 2}
+  - {fileID: 11400000, guid: 7fd396b847e479641b626085d7a8dbd1, type: 2}
   elementsToLock: []
-  sentence: "Jeste\u015B super"
+  sentence: "Umowa stoi. Jeste\u015B niesamowity"
   responses: []
   baseTalkable: 0
   canExit: 1
