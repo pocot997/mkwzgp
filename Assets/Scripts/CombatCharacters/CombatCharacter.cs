@@ -16,6 +16,8 @@ public abstract class CombatCharacter : MonoBehaviour
     [HideInInspector] public bool effectBlockCasting = false;
     [HideInInspector] public bool effectBlockMoving = false;
 
+    internal float HitPoints { get => hitPoints; set => hitPoints = value; }
+
     public void ChangeHitPoints(float value)
     {
         if(value < 0)
@@ -23,20 +25,20 @@ public abstract class CombatCharacter : MonoBehaviour
             value *= effectReduceDamage;
         }
 
-        hitPoints += value;
+        HitPoints += value;
         if(!CheckIsAlive())
         {
             Die();
         }
-        else if (hitPoints > maxHitPoints)
+        else if (HitPoints > maxHitPoints)
         {
-            hitPoints = maxHitPoints;
+            HitPoints = maxHitPoints;
         }
     }
 
     public bool CheckIsAlive()
     {
-        if (hitPoints <= 0)
+        if (HitPoints <= 0)
             return false;
         return true;
     }
