@@ -16,7 +16,7 @@ public class PlayerModelController : MonoBehaviour
 
     void Start()
     {
-        middleTrackPlayerPosition = transform.position;
+        middleTrackPlayerPosition = transform.localPosition;
         middleTrackPlayerPosition.y = MidiManagers.globalPathCoordinates.trackShiftY;
         renderer = GetComponent<Renderer>();
     }
@@ -27,10 +27,10 @@ public class PlayerModelController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.D))
         {
             lerpStartTime = Time.time;
-            lerpInitialPosition = transform.position;
+            lerpInitialPosition = transform.localPosition;
         }
 
-        transform.position = Vector3.Lerp(lerpInitialPosition, playerCollider.position, (Time.time - lerpStartTime) * lerpSpeed /* * Mathf.Clamp(Vector3.Distance(transform.position, playerCollider.position),0.3f,5)*/);
+        transform.localPosition = Vector3.Lerp(lerpInitialPosition, playerCollider.localPosition, (Time.time - lerpStartTime) * lerpSpeed /* * Mathf.Clamp(Vector3.Distance(transform.localPosition, playerCollider.localPosition),0.3f,5)*/);
 
         if (Input.GetKey(KeyCode.J))
         {

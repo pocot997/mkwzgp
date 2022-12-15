@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour, ManagerInterface
     {
         folderPath = Application.persistentDataPath + "/track/";
         audioSource.Stop();
-        SongController.onNotesReady += (List<float> list) =>
+        SongManager.onNotesReady += (List<float> list) =>
         {
             audioSource.Play();
         };

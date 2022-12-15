@@ -6,70 +6,101 @@ using UnityEngine.SceneManagement;
 
 public class BattleLoader : MonoBehaviour
 {
-    [SerializeField] GameObject sceneCamera;
-    [SerializeField] GameObject manager;
+    //[SerializeField] GameObject sceneCamera;
+    //[SerializeField] GameObject manager;
 
-    [SerializeField] GameObject player;
-    List<GameObject> enemies;
+    //[SerializeField] GameObject playerSetup;
+    //List<GameObject> enemies = new List<GameObject>();
+
+    [SerializeField] List<GameObject> mainSceneElements = new List<GameObject>();
+    [SerializeField] List<GameObject> battleSceneElements = new List<GameObject>();
 
     CombatEnemy currentEnemy;
     float enemyHP;
 
     void Start()
     {
+        foreach (GameObject obj in mainSceneElements)
+        {
+            obj.SetActive(true);
+        }
+
+        foreach (GameObject obj in battleSceneElements)
+        {
+            obj.SetActive(false);
+        }
+
         CombatEnemy.onEnterCombat += ChangeToBattleMap;
         NoteInstanciatorManager.onFinishBattle += ChangeToMainMap;
     }
 
-    void ChangeToBattleMap(CombatEnemy enemy)
+    private void Update()
     {
-        currentEnemy = enemy;
-        enemyHP = enemy.HitPoints;
-        enemies = FindActiveEnemiesOnScene();
-        LoadBattleMap();
-        SetActiveSceneElements(false);
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ChangeToBattleMap();
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ChangeToMainMap();
+        }
+    }
+
+    void ChangeToBattleMap(CombatEnemy enemy = null)
+    {
+        if (enemy != null)
+        {
+            currentEnemy = enemy;
+            enemyHP = enemy.HitPoints;
+        }
+
+        //AddActiveEnemiesOnScene();
+
+        //LoadBattleMap();
+        ToggleElements();
     }
     
     void ChangeToMainMap()
     {
-        SetActiveSceneElements(true);
-        UnloadBattleMap();
+        ToggleElements();
+       // UnloadBattleMap();
     }
 
-    void SetActiveSceneElements(bool toggle)
+    void ToggleElements()
     {
-        sceneCamera.SetActive(toggle);
-        manager.SetActive(toggle);
-        player.SetActive(toggle);
-        foreach (GameObject enemy in enemies)
+        foreach(GameObject obj in mainSceneElements)
         {
-            enemy.SetActive(toggle);
+            obj.SetActive(!obj.activeSelf);
+        }
+
+        foreach(GameObject obj in battleSceneElements)
+        {
+            obj.SetActive(!obj.activeSelf);
         }
     }
 
-    List<GameObject> FindActiveEnemiesOnScene()
-    {
-        List<GameObject> validTransforms = new List<GameObject>();
-        CombatEnemy[] objs = Resources.FindObjectsOfTypeAll<CombatEnemy>() as CombatEnemy[];
-        for (int i = 0; i < objs.Length; i++)
-        {
-            if (objs[i].hideFlags == HideFlags.None)
-            {
-                validTransforms.Add(objs[i].gameObject);
-            }
-        }
-        return validTransforms;
-    }
+    //void AddActiveEnemiesOnScene()
+    //{
+    //    //List<GameObject> validTransforms = new List<GameObject>();
+    //    CombatEnemy[] objs = Resources.FindObjectsOfTypeAll<CombatEnemy>() as CombatEnemy[];
+    //    for (int i = 0; i < objs.Length; i++)
+    //    {
+    //        if (objs[i].hideFlags == HideFlags.None)
+    //        {
+    //            mainSceneElements.Add(objs[i].gameObject);
+    //        }
+    //    }
+    //}
 
-    void LoadBattleMap()
-    {
-        SceneManager.LoadScene("BattleArena", LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("BattleArena"));
-    }
+    //void LoadBattleMap()
+    //{
+    //    SceneManager.LoadScene("BattleArena", LoadSceneMode.Additive);
+    //    SceneManager.SetActiveScene(SceneManager.GetSceneByName("BattleArena"));
+    //}
 
-    void UnloadBattleMap()
-    {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));
-        SceneManager.UnloadSceneAsync("BattleArena");
-    }
+    //void UnloadBattleMap()
+    //{
+    //    SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));
+    //    SceneManager.UnloadSceneAsync("BattleArena");
+    //}
 }

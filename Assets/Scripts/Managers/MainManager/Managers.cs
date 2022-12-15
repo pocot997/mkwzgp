@@ -12,6 +12,7 @@ namespace DVSN.GameManagment
     [RequireComponent(typeof(QuestManager))]
     [RequireComponent(typeof(DialogueManager))]
     [RequireComponent(typeof(InventoryManager))]
+    [RequireComponent (typeof(SongManager))]
     public class Managers : MonoBehaviour
     {
         public static PlayerManager Player { get; private set; }
@@ -19,6 +20,7 @@ namespace DVSN.GameManagment
         public static QuestManager Quest { get; private set; }
         public static DialogueManager Dialogue { get; private set; }
         public static InventoryManager Inventory { get; private set; }
+        public static SongManager Song { get; private set; }
 
         public static bool allLoaded { get; private set; }
 
@@ -32,6 +34,7 @@ namespace DVSN.GameManagment
             Quest = GetComponent<QuestManager>();
             Dialogue = GetComponent<DialogueManager>();
             Inventory = GetComponent<InventoryManager>();
+            Song = GetComponent<SongManager>();
 
             _startSequence = new List<IGameManager>();
 
@@ -40,6 +43,7 @@ namespace DVSN.GameManagment
             _startSequence.Add(Quest);
             _startSequence.Add(Dialogue);
             _startSequence.Add(Inventory);
+            _startSequence.Add(Song);
 
             StartCoroutine(StartupManagers());
         }

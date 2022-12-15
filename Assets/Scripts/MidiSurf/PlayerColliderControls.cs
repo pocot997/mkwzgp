@@ -10,7 +10,7 @@ public class PlayerColliderControls : MonoBehaviour
       
     void Start()
     { 
-        middleTrackPlayerPosition = transform.position;
+        middleTrackPlayerPosition = transform.localPosition;
         middleTrackPlayerPosition.y = MidiManagers.globalPathCoordinates.trackShiftY;
     }
 
@@ -24,19 +24,19 @@ public class PlayerColliderControls : MonoBehaviour
     {
         if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
         {
-            transform.position = middleTrackPlayerPosition;
+            transform.localPosition = middleTrackPlayerPosition;
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position = new Vector3(MidiManagers.globalPathCoordinates.leftTrackShiftX, middleTrackPlayerPosition.y, middleTrackPlayerPosition.z);
+            transform.localPosition = new Vector3(MidiManagers.globalPathCoordinates.leftTrackShiftX, middleTrackPlayerPosition.y, middleTrackPlayerPosition.z);
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(MidiManagers.globalPathCoordinates.rightTrackShiftX, middleTrackPlayerPosition.y, middleTrackPlayerPosition.z);
+            transform.localPosition = new Vector3(MidiManagers.globalPathCoordinates.rightTrackShiftX, middleTrackPlayerPosition.y, middleTrackPlayerPosition.z);
         }
         else
         {
-            transform.position = middleTrackPlayerPosition;
+            transform.localPosition = middleTrackPlayerPosition;
         }
     }
 

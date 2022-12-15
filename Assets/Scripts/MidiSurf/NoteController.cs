@@ -12,7 +12,7 @@ public class NoteController : MonoBehaviour
         // Moves the object forward
         transform.Translate(Vector3.back * speed * Time.deltaTime);
 
-        if (transform.position.z <= -1)
+        if (transform.localPosition.z <= -1)
             Destroy(this.gameObject);
     }
 }

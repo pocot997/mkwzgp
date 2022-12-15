@@ -8,10 +8,11 @@ using System.Numerics;
 using DSPLib;
 
 
-public class SongController : MonoBehaviour
+public class SongManager : MonoBehaviour, IGameManager
 {
+    public ManagerStatus status { get; private set; }
 
-	float[] realTimeSpectrum;
+    float[] realTimeSpectrum;
 	SpectralFluxAnalyzer realTimeSpectralFluxAnalyzer;
 
 	int numChannels;
@@ -21,7 +22,7 @@ public class SongController : MonoBehaviour
 	float[] multiChannelSamples;
 	SpectralFluxAnalyzer preProcessedSpectralFluxAnalyzer;
 
-	AudioSource audioSource;
+	[SerializeField] AudioSource audioSource;
 
 	public bool realTimeSamples = true;
 	public bool preProcessSamples = false;
@@ -30,6 +31,11 @@ public class SongController : MonoBehaviour
 
     internal delegate void NotesReady(List<float> list);
     internal static event NotesReady onNotesReady;
+
+    public void Startup()
+    {
+        status = ManagerStatus.Started;
+    }
 
     void SendNotes()
 	{
@@ -41,8 +47,6 @@ public class SongController : MonoBehaviour
 
     void Start()
 	{
-		audioSource = GetComponent<AudioSource>();
-
 		// Process audio as it plays
 		if (realTimeSamples)
 		{

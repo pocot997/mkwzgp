@@ -10,8 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2468538121385660345}
   - component: {fileID: 2468538121385660347}
-  - component: {fileID: 2468538121385660348}
   - component: {fileID: 2468538121385660349}
+  - component: {fileID: 7193035732290154495}
+  - component: {fileID: 2928246462980469535}
+  - component: {fileID: 6197064262261620752}
+  - component: {fileID: 5063717409443819930}
   m_Layer: 0
   m_Name: ManagerCombatSystem
   m_TagString: Untagged
@@ -29,6 +32,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.5957651, y: 3.078351, z: 3.2102923}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,20 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e50885f361a66346bc0e6d871ec34f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2468538121385660348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2468538121385660350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 761cecec53cf7f4439407c2198b557c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prediction: 0
-  score: 0
 --- !u!114 &2468538121385660349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,9 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9824ba6efd64dd4f98c2495ec28ea43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellcastKey: 308
-  drawController: {fileID: 0}
-  cursorPanel: {fileID: 0}
   spellbook:
   - {fileID: 8252529180839723103, guid: e0bb881b6c25e9f4dbdf927845112d70, type: 3}
   - {fileID: 6172775381969061405, guid: 9325e538dfd3c1c4280584ca812e215c, type: 3}
@@ -85,15 +72,70 @@ MonoBehaviour:
   - {fileID: 4747249660370334602, guid: 68d2120522416bd4794ffc907bdbc316, type: 3}
   - {fileID: 6168464762355130759, guid: 2027f561e52fce548a81a53ca14637bc, type: 3}
   - {fileID: 7364643457524870508, guid: 9975d8129edf09c40a58d81f5ebf0c29, type: 3}
-  negativeEffects:
-  - {fileID: 3100792854252394578, guid: 01798eef930f6fb488216c07b118f99e, type: 3}
-  - {fileID: 3130055798086387714, guid: 7edd2c22e862f57428b3680be42b84f2, type: 3}
-  - {fileID: 8053113872224006808, guid: 859a10a475f2aeb4aa00a99c69c21174, type: 3}
-  - {fileID: 8785928173362479926, guid: 9585b0505c2b3db4aabd68d757be1730, type: 3}
-  - {fileID: 5576927712092806137, guid: 848471bab76b1dc4284d12aee09ed9c5, type: 3}
   startCastingPosition: {x: 0, y: 0, z: 0}
   isSpellReady: 0
   isCasting: 0
   isAbleToCast: 1
   effectBlockCasting: 0
   effectBlockMoving: 0
+--- !u!114 &7193035732290154495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468538121385660350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ee81c59d62ed0438340959355c856c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObject: {fileID: 0}
+--- !u!114 &2928246462980469535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468538121385660350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c3a14102caf794dbbdcd2b7471acbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeQuestPanel: {fileID: 0}
+  activeQuestContent: {fileID: 0}
+  questButtonPrefab: {fileID: 0}
+  questDetailsPanel: {fileID: 0}
+  questNameText: {fileID: 0}
+  questDescriptionText: {fileID: 0}
+--- !u!114 &6197064262261620752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468538121385660350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c534205b8b797bf46a3f306ae5ba7134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 0}
+  responseContent: {fileID: 0}
+  dialogueCharacterNameText: {fileID: 0}
+  dialogueCharacterSentenceText: {fileID: 0}
+  dialogueResponseButtonPrefab: {fileID: 0}
+--- !u!114 &5063717409443819930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468538121385660350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a572fbfc6e692244a8442b87972902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []

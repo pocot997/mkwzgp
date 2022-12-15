@@ -1,3 +1,4 @@
+using DVSN.GameManagment;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
     [SerializeField] private float spawnDelay = 2.3f;
     [SerializeField] private float noteInstantiationHight = 0.1f;
 
-    List <float> noteSpawningWithDelay = new List<float> ();
+    internal List <float> noteSpawningWithDelay = new List<float> ();
 
     private int lastTrackId = 0;
     internal int newTrackId = 1;
@@ -20,6 +21,8 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 
     [SerializeField] float noteInstantiationCooldown = 1f;
     float lastNoteInstantiationTime = 0f;
+
+    [SerializeField] Transform noteOffset;
 
     internal delegate void TrackChanged(int trackId);
     internal static event TrackChanged onTrackChanged;
@@ -45,7 +48,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 
     public void Startup()
     {
-        SongController.onNotesReady += NoteInstantioation;
+        SongManager.onNotesReady += NoteInstantioation;
         ChangeTrack();
         status = ManagerStatus.Started;
     }
@@ -83,13 +86,13 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
         switch(trackNumber)
         {
             case 0:
-                Instantiate(notes[noteID], this.transform.position + (Vector3.right * MidiManagers.globalPathCoordinates.leftTrackShiftX) + new Vector3(0, noteInstantiationHight, 8), this.transform.rotation);
+                Instantiate(notes[noteID], this.transform.localPosition + (Vector3.right * MidiManagers.globalPathCoordinates.leftTrackShiftX) + new Vector3(0, noteInstantiationHight, 8), this.transform.rotation, noteOffset);
                 break;
             case 1:
-                Instantiate(notes[noteID], this.transform.position + new Vector3(0, noteInstantiationHight, 8), this.transform.rotation);
+                Instantiate(notes[noteID], this.transform.localPosition + new Vector3(0, noteInstantiationHight, 8), this.transform.rotation, noteOffset);
                 break;
             case 2:
-                Instantiate(notes[noteID], this.transform.position + (Vector3.right * MidiManagers.globalPathCoordinates.rightTrackShiftX) + new Vector3(0, noteInstantiationHight, 8), this.transform.rotation);
+                Instantiate(notes[noteID], this.transform.localPosition + (Vector3.right * MidiManagers.globalPathCoordinates.rightTrackShiftX) + new Vector3(0, noteInstantiationHight, 8), this.transform.rotation, noteOffset);
                 break;
         }
     }
@@ -118,6 +121,6 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
         }
 
         // Here you won the game
-        FinishBattleWithPlayer();
+        // FinishBattleWithPlayer();
     }
 }

@@ -15,13 +15,13 @@ public class EnemyController : MonoBehaviour
         switch (trackNumber)
         {
             case 0:
-                transform.position =  (Vector3.right * MidiManagers.globalPathCoordinates.leftTrackShiftX) + new Vector3(0, 0.2f, 8);
+                transform.localPosition =  (Vector3.right * MidiManagers.globalPathCoordinates.leftTrackShiftX) + new Vector3(0, 0.2f, 8);
                 break;
             case 1:
-                transform.position = new Vector3(0, 0.2f, 8);
+                transform.localPosition = new Vector3(0, 0.2f, 8);
                 break;
             case 2:
-                transform.position = (Vector3.right * MidiManagers.globalPathCoordinates.rightTrackShiftX) + new Vector3(0, 0.2f, 8);
+                transform.localPosition = (Vector3.right * MidiManagers.globalPathCoordinates.rightTrackShiftX) + new Vector3(0, 0.2f, 8);
                 break;
         }
     }
