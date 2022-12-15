@@ -4,21 +4,22 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BattleLoader : MonoBehaviour
+public class BattleLoaderManager : MonoBehaviour, IGameManager
 {
     //[SerializeField] GameObject sceneCamera;
     //[SerializeField] GameObject manager;
 
     //[SerializeField] GameObject playerSetup;
     //List<GameObject> enemies = new List<GameObject>();
+    public ManagerStatus status { get; private set; }
 
     [SerializeField] List<GameObject> mainSceneElements = new List<GameObject>();
     [SerializeField] List<GameObject> battleSceneElements = new List<GameObject>();
 
-    CombatEnemy currentEnemy;
-    float enemyHP;
+    internal CombatEnemy currentEnemy;
+    internal float enemyHP;
 
-    void Start()
+    public void Startup()
     {
         foreach (GameObject obj in mainSceneElements)
         {
@@ -32,6 +33,7 @@ public class BattleLoader : MonoBehaviour
 
         CombatEnemy.onEnterCombat += ChangeToBattleMap;
         NoteInstanciatorManager.onFinishBattle += ChangeToMainMap;
+        status = ManagerStatus.Started;
     }
 
     private void Update()

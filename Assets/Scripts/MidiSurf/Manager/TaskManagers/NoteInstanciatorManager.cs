@@ -1,4 +1,5 @@
 using DVSN.GameManagment;
+using DVSN.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -119,6 +120,11 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
             }
             yield return new WaitForEndOfFrame();
         }
+
+        CombatEnemy currentEnemy = Managers.BattleLoader.currentEnemy;
+        float currentEnemyHP = Managers.BattleLoader.enemyHP;
+        CombatPlayer player = Managers.Player.playerObject.GetComponent<CombatPlayer>();
+        float playerHP = player.HitPoints;
 
         // Here you won the game
         // FinishBattleWithPlayer();

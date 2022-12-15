@@ -4212,6 +4212,58 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: mainSceneElements.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: battleSceneElements.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: mainSceneElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 2078926488157406586}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: mainSceneElements.Array.data[1]
+      value: 
+      objectReference: {fileID: 107554190}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: mainSceneElements.Array.data[2]
+      value: 
+      objectReference: {fileID: 1998737930}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: mainSceneElements.Array.data[3]
+      value: 
+      objectReference: {fileID: 1998737930}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: battleSceneElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 963194225}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: battleSceneElements.Array.data[1]
+      value: 
+      objectReference: {fileID: 6564776932783802777}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: battleSceneElements.Array.data[2]
+      value: 
+      objectReference: {fileID: 6564776932326060546}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: battleSceneElements.Array.data[3]
+      value: 
+      objectReference: {fileID: 2019741609}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: battleSceneElements.Array.data[4]
+      value: 
+      objectReference: {fileID: 1847494650}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: battleSceneElements.Array.data[5]
+      value: 
+      objectReference: {fileID: 715915118}
+    - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
+      propertyPath: battleSceneElements.Array.data[6]
+      value: 
+      objectReference: {fileID: 1909406312}
     - target: {fileID: 2928246462980469535, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
       propertyPath: questNameText
       value: 
@@ -11692,7 +11744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2137184347
 MonoBehaviour:
   m_ObjectHideFlags: 0
