@@ -19,6 +19,6 @@ MonoBehaviour:
     z \u017Cyciem, ale zabrali mi pieni\u0105dze."
   responses:
   - sentence: "Dobra odpal mi 20 ziko na kebsa i znajd\u0119 tw\xF3j hajs"
-    nextDialogue: {fileID: 11400000, guid: bcbda9e0bc551e8429a4f69a634faf89, type: 2}
+    nextDialogue: {fileID: 11400000, guid: fcac245dd59303f48abf4d0d4fbf4565, type: 2}
   baseTalkable: 2
   canExit: 0

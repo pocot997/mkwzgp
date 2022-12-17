@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 namespace DVSN.Player
 {
@@ -9,6 +10,9 @@ namespace DVSN.Player
         public ManagerStatus status { get; private set; }
 
         [SerializeField] internal GameObject playerObject;
+
+        PlayerMovement playerMovement;
+        PlayerLook playerLook;
 
         internal int level;
         internal int experience;
@@ -19,6 +23,9 @@ namespace DVSN.Player
 
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+
+            playerMovement = playerObject.GetComponent<PlayerMovement>();
+            playerLook = playerObject.GetComponent<PlayerLook>();
         }
 
         void Update()
@@ -35,7 +42,8 @@ namespace DVSN.Player
 
         internal void FrizPlayer(bool toFriz)
         {
-
+            playerMovement.enabled = !toFriz;
+            playerLook.enabled = !toFriz;
         }
     }
 }

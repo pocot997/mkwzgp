@@ -97,6 +97,8 @@ namespace DVSN.Enemy
 
         private void AttackPlayer()
         {
+            //TODO WALKA
+            /*
             //Make sure enemy doesn't move
             agent.SetDestination(transform.position);
 
@@ -114,6 +116,7 @@ namespace DVSN.Enemy
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
+            */
         }
 
         private void ResetAttack()
