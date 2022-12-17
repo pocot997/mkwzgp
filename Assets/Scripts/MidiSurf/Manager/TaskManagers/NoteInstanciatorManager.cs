@@ -111,7 +111,11 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 
     private IEnumerator NoteController()
     {
-        while(noteSpawningWithDelay.Count > 0)
+        CombatEnemy currentEnemy = Managers.BattleLoader.currentEnemy;
+        float currentEnemyHP = Managers.BattleLoader.enemyHP;
+        CombatPlayer player = Managers.Player.playerObject.GetComponent<CombatPlayer>();
+
+        while (/*noteSpawningWithDelay.Count > 0*/ Managers.BattleLoader.enemyHP > 0 && player.HitPoints > 0)
         {
             if (noteSpawningWithDelay[0] <= MidiManagers.gameAudio.audioSource.time)
             {
@@ -121,12 +125,11 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
             yield return new WaitForEndOfFrame();
         }
 
-        CombatEnemy currentEnemy = Managers.BattleLoader.currentEnemy;
-        float currentEnemyHP = Managers.BattleLoader.enemyHP;
-        CombatPlayer player = Managers.Player.playerObject.GetComponent<CombatPlayer>();
-        float playerHP = player.HitPoints;
+        if(player.HitPoints <= 0)
+        {
+            // player lose here. DOnt know what to do
+        }
 
-        // Here you won the game
-        // FinishBattleWithPlayer();
+        FinishBattleWithPlayer();
     }
 }

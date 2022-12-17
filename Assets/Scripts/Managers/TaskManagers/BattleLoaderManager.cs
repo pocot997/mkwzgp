@@ -6,21 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class BattleLoaderManager : MonoBehaviour, IGameManager
 {
-    //[SerializeField] GameObject sceneCamera;
-    //[SerializeField] GameObject manager;
-
-    //[SerializeField] GameObject playerSetup;
-    //List<GameObject> enemies = new List<GameObject>();
     public ManagerStatus status { get; private set; }
 
     [SerializeField] List<GameObject> mainSceneElements = new List<GameObject>();
     [SerializeField] List<GameObject> battleSceneElements = new List<GameObject>();
 
-    internal CombatEnemy currentEnemy;
+    [SerializeField] internal CombatEnemy currentEnemy;
     internal float enemyHP;
 
     public void Startup()
     {
+        enemyHP = currentEnemy.HitPoints;
         foreach (GameObject obj in mainSceneElements)
         {
             obj.SetActive(true);
@@ -56,16 +52,12 @@ public class BattleLoaderManager : MonoBehaviour, IGameManager
             enemyHP = enemy.HitPoints;
         }
 
-        //AddActiveEnemiesOnScene();
-
-        //LoadBattleMap();
         ToggleElements();
     }
     
     void ChangeToMainMap()
     {
         ToggleElements();
-       // UnloadBattleMap();
     }
 
     void ToggleElements()
@@ -80,29 +72,4 @@ public class BattleLoaderManager : MonoBehaviour, IGameManager
             obj.SetActive(!obj.activeSelf);
         }
     }
-
-    //void AddActiveEnemiesOnScene()
-    //{
-    //    //List<GameObject> validTransforms = new List<GameObject>();
-    //    CombatEnemy[] objs = Resources.FindObjectsOfTypeAll<CombatEnemy>() as CombatEnemy[];
-    //    for (int i = 0; i < objs.Length; i++)
-    //    {
-    //        if (objs[i].hideFlags == HideFlags.None)
-    //        {
-    //            mainSceneElements.Add(objs[i].gameObject);
-    //        }
-    //    }
-    //}
-
-    //void LoadBattleMap()
-    //{
-    //    SceneManager.LoadScene("BattleArena", LoadSceneMode.Additive);
-    //    SceneManager.SetActiveScene(SceneManager.GetSceneByName("BattleArena"));
-    //}
-
-    //void UnloadBattleMap()
-    //{
-    //    SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));
-    //    SceneManager.UnloadSceneAsync("BattleArena");
-    //}
 }

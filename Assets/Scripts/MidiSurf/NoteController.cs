@@ -1,3 +1,5 @@
+using DVSN.GameManagment;
+using DVSN.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +15,10 @@ public class NoteController : MonoBehaviour
         transform.Translate(Vector3.back * speed * Time.deltaTime);
 
         if (transform.localPosition.z <= -1)
+        {
+            Managers.Player.playerObject.GetComponent<CombatPlayer>().ChangeHitPoints(-10);
             Destroy(this.gameObject);
+        }
     }
 }
 

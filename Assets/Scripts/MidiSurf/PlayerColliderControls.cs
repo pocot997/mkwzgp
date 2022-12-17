@@ -1,3 +1,4 @@
+using DVSN.GameManagment;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,21 +67,27 @@ public class PlayerColliderControls : MonoBehaviour
 
         if (Input.GetKey(KeyCode.J) && collisionObject.element == NoteElement.Fire)
         {
+            Managers.BattleLoader.enemyHP -= 20;
             objectInCollider = false;
             Destroy(collisionObject.gameObject);
             MidiManagers.score.UpdateScore();
+            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-20);
         }
         else if (Input.GetKey(KeyCode.K) && collisionObject.element == NoteElement.Earth)
         {
+            Managers.BattleLoader.enemyHP -= 20;
             objectInCollider = false;
             Destroy(collisionObject.gameObject);
             MidiManagers.score.UpdateScore();
+            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-20);
         }
         else if (Input.GetKey(KeyCode.L) && collisionObject.element == NoteElement.Water)
         {
+            Managers.BattleLoader.enemyHP -= 20;
             objectInCollider = false;
             Destroy(collisionObject.gameObject);
             MidiManagers.score.UpdateScore();
+            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-20);
         }
     }
 }
