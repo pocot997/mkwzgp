@@ -4,10 +4,10 @@ using UnityEngine;
 public abstract class CombatCharacter : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float hitPoints = 100f;
-    [SerializeField] private float maxHitPoints = 100f;
-    [SerializeField] private float overheat = 0f;
-    [SerializeField] private float maxOverheat = 100f;
+    [SerializeField] protected float hitPoints = 100f;
+    [SerializeField] protected float maxHitPoints = 100f;
+    [SerializeField] protected float overheat = 0f;
+    [SerializeField] protected float maxOverheat = 100f;
 
     [Header("Effects")]
     public List<Effect> activeEffects;
@@ -18,23 +18,7 @@ public abstract class CombatCharacter : MonoBehaviour
 
     internal float HitPoints { get => hitPoints; set => hitPoints = value; }
 
-    public void ChangeHitPoints(float value)
-    {
-        if(value < 0)
-        {
-            value *= effectReduceDamage;
-        }
-
-        HitPoints += value;
-        if(!CheckIsAlive())
-        {
-            Die();
-        }
-        else if (HitPoints > maxHitPoints)
-        {
-            HitPoints = maxHitPoints;
-        }
-    }
+    public abstract void ChangeHitPoints(float value);
 
     public bool CheckIsAlive()
     {

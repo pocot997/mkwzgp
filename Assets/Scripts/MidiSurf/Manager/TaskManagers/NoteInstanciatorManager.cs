@@ -2,7 +2,9 @@ using DVSN.GameManagment;
 using DVSN.Player;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 {
@@ -30,6 +32,9 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 
     internal delegate void FinishBattle();
     internal static event FinishBattle onFinishBattle;
+
+    [SerializeField] Slider playerHealthBar;
+    [SerializeField] Slider enemyHealthBar;
 
     void ChangeTrack()
     {
@@ -105,7 +110,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
         {
             noteSpawningWithDelay.Add(spawningTime - spawnDelay);
         }
-
+        Debug.Log(noteSpawningWithDelay.Count);
         StartCoroutine(NoteController());
     }
 
@@ -117,6 +122,9 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 
         while (/*noteSpawningWithDelay.Count > 0*/ Managers.BattleLoader.enemyHP > 0 && player.HitPoints > 0)
         {
+            enemyHealthBar.value = Managers.BattleLoader.enemyHP;
+            playerHealthBar.value = player.HitPoints;
+
             if (noteSpawningWithDelay[0] <= MidiManagers.gameAudio.audioSource.time)
             {
                 InstantiateNote();

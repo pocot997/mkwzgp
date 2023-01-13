@@ -110,5 +110,25 @@ namespace DVSN.Player
         {
             Debug.Log("You Die");
         }
+
+        public override void ChangeHitPoints(float value)
+        {
+            value = value / 2;
+
+            if (value < 0)
+            {
+                value *= effectReduceDamage;
+            }
+
+            HitPoints += value;
+            if (!CheckIsAlive())
+            {
+                Die();
+            }
+            else if (HitPoints > maxHitPoints)
+            {
+                HitPoints = maxHitPoints;
+            }
+        }
     }
 }

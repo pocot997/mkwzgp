@@ -44,7 +44,7 @@ public class BattleLoaderManager : MonoBehaviour, IGameManager
         }
     }
 
-    void ChangeToBattleMap(CombatEnemy enemy = null)
+    internal void ChangeToBattleMap(CombatEnemy enemy = null)
     {
         if (enemy != null)
         {

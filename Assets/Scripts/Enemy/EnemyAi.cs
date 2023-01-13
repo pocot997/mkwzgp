@@ -97,26 +97,7 @@ namespace DVSN.Enemy
 
         private void AttackPlayer()
         {
-            //TODO WALKA
-            /*
-            //Make sure enemy doesn't move
-            agent.SetDestination(transform.position);
-
-            transform.LookAt(player);
-
-            if (!alreadyAttacked)
-            {
-                Managers.Spellcasting.InstantiateSpell(0, transform);
-                ///Attack code here
-                //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                //rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-                //rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-                ///End of attack code
-
-                alreadyAttacked = true;
-                Invoke(nameof(ResetAttack), timeBetweenAttacks);
-            }
-            */
+            Managers.BattleLoader.ChangeToBattleMap();
         }
 
         private void ResetAttack()

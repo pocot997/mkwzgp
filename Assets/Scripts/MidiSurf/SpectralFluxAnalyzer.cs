@@ -76,14 +76,14 @@ public class SpectralFluxAnalyzer
 			if (curPeak)
 			{
 				spectralFluxSamples[indexToDetectPeak].isPeak = true;
-				Debug.Log("Detected Peak at sample:" + indexToDetectPeak.ToString());
+				//Debug.Log("Detected Peak at sample:" + indexToDetectPeak.ToString());
 				toReturn = true;
             }
 			indexToProcess++;
 		}
 		else
 		{
-			Debug.Log(string.Format("Not ready yet.  At spectral flux sample size of {0} growing to {1}", spectralFluxSamples.Count, thresholdWindowSize));
+			//Debug.Log(string.Format("Not ready yet.  At spectral flux sample size of {0} growing to {1}", spectralFluxSamples.Count, thresholdWindowSize));
 		}
 		return toReturn;
 	}

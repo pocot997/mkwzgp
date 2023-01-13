@@ -18,4 +18,22 @@ public class CombatEnemy : CombatCharacter
     {
         Destroy(this.gameObject);
     }
+
+    public override void ChangeHitPoints(float value)
+    {
+        if (value < 0)
+        {
+            value *= effectReduceDamage;
+        }
+
+        HitPoints += value;
+        if (!CheckIsAlive())
+        {
+            Die();
+        }
+        else if (HitPoints > maxHitPoints)
+        {
+            HitPoints = maxHitPoints;
+        }
+    }
 }

@@ -67,27 +67,27 @@ public class PlayerColliderControls : MonoBehaviour
 
         if (Input.GetKey(KeyCode.J) && collisionObject.element == NoteElement.Fire)
         {
-            Managers.BattleLoader.enemyHP -= 20;
+            Managers.BattleLoader.enemyHP -= 10;
             objectInCollider = false;
             Destroy(collisionObject.gameObject);
             MidiManagers.score.UpdateScore();
-            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-20);
+            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-10);
         }
         else if (Input.GetKey(KeyCode.K) && collisionObject.element == NoteElement.Earth)
         {
-            Managers.BattleLoader.enemyHP -= 20;
+            Managers.BattleLoader.enemyHP -= 10;
             objectInCollider = false;
             Destroy(collisionObject.gameObject);
             MidiManagers.score.UpdateScore();
-            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-20);
+            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-10);
         }
         else if (Input.GetKey(KeyCode.L) && collisionObject.element == NoteElement.Water)
         {
-            Managers.BattleLoader.enemyHP -= 20;
+            Managers.BattleLoader.enemyHP -= 10;
             objectInCollider = false;
             Destroy(collisionObject.gameObject);
             MidiManagers.score.UpdateScore();
-            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-20);
+            Managers.BattleLoader.currentEnemy.ChangeHitPoints(-10);
         }
     }
 }
