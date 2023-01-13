@@ -6,7 +6,7 @@ public class CombatEnemy : CombatCharacter
     internal delegate void EnterCombat(CombatEnemy enemy);
     internal static event EnterCombat onEnterCombat;
 
-    void StartCombat() // Trzeba wywolac
+    public void StartCombat() // Trzeba wywolac
     {
         if (onEnterCombat != null)
         {

@@ -1024,7 +1024,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -16596,7 +16596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377866745984113451, guid: b9bf811cbc81a054e8eb65d067db4b40, type: 3}
       propertyPath: noteInstantiationCooldown
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8796927322886861465, guid: b9bf811cbc81a054e8eb65d067db4b40, type: 3}
       propertyPath: scoreDisplay

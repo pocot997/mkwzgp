@@ -21,6 +21,8 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
     internal int newTrackId = 1;
     private float lastTrackProbability = 90f;
     private float drawnprobability = 0f;
+    int maxCounter = 30;
+    int counter = 0;
 
     [SerializeField] float noteInstantiationCooldown = 1f;
     float lastNoteInstantiationTime = 0f;
@@ -35,6 +37,8 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 
     [SerializeField] Slider playerHealthBar;
     [SerializeField] Slider enemyHealthBar;
+
+    bool secendEnable = false;
 
     void ChangeTrack()
     {
@@ -55,8 +59,17 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
     public void Startup()
     {
         SongManager.onNotesReady += NoteInstantioation;
+        CombatEnemy.onEnterCombat += EnableCombat;
         ChangeTrack();
         status = ManagerStatus.Started;
+    }
+
+    void EnableCombat(CombatEnemy enemy = null)
+    {
+        if(secendEnable)
+        {
+            StartCoroutine(NoteController());
+        }
     }
 
     internal void InstantiateNote()
@@ -110,7 +123,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
         {
             noteSpawningWithDelay.Add(spawningTime - spawnDelay);
         }
-        Debug.Log(noteSpawningWithDelay.Count);
+
         StartCoroutine(NoteController());
     }
 
@@ -119,21 +132,35 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
         CombatEnemy currentEnemy = Managers.BattleLoader.currentEnemy;
         float currentEnemyHP = Managers.BattleLoader.enemyHP;
         CombatPlayer player = Managers.Player.playerObject.GetComponent<CombatPlayer>();
+       
 
         while (/*noteSpawningWithDelay.Count > 0*/ Managers.BattleLoader.enemyHP > 0 && player.HitPoints > 0)
         {
             enemyHealthBar.value = Managers.BattleLoader.enemyHP;
             playerHealthBar.value = player.HitPoints;
 
-            if (noteSpawningWithDelay[0] <= MidiManagers.gameAudio.audioSource.time)
+            if (noteSpawningWithDelay[counter] <= MidiManagers.gameAudio.audioSource.time)
             {
+                counter++;
+                player.HitPoints = 100;
                 InstantiateNote();
-                noteSpawningWithDelay.RemoveAt(0);
+                //noteSpawningWithDelay.RemoveAt(0);
+                if (counter > maxCounter)
+                {
+                    counter = 0;
+                }
             }
             yield return new WaitForEndOfFrame();
         }
 
-        if(player.HitPoints <= 0)
+        for (int i = noteOffset.transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(noteOffset.transform.GetChild(i).gameObject);
+        }
+
+        secendEnable = true;
+
+        if (player.HitPoints <= 0)
         {
             // player lose here. DOnt know what to do
         }

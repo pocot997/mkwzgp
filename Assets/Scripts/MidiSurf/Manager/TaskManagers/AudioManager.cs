@@ -30,10 +30,10 @@ public class AudioManager : MonoBehaviour, ManagerInterface
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            LoadNewTrack();
-        }
+        //if(Input.GetKeyDown(KeyCode.E))
+        //{
+        //    LoadNewTrack();
+        //}
     }
 
     private void LoadNewTrack()

@@ -97,7 +97,7 @@ namespace DVSN.Enemy
 
         private void AttackPlayer()
         {
-            Managers.BattleLoader.ChangeToBattleMap();
+            GetComponent<CombatEnemy>().StartCombat();
         }
 
         private void ResetAttack()
