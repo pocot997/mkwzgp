@@ -142,7 +142,6 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
             if (noteSpawningWithDelay[counter] <= MidiManagers.gameAudio.audioSource.time)
             {
                 counter++;
-                player.HitPoints = 100;
                 InstantiateNote();
                 //noteSpawningWithDelay.RemoveAt(0);
                 if (counter > maxCounter)
