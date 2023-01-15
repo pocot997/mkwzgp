@@ -16,7 +16,7 @@ public class BattleLoaderManager : MonoBehaviour, IGameManager
 
     public void Startup()
     {
-        enemyHP = currentEnemy.HitPoints;
+        enemyHP = 100;
         foreach (GameObject obj in mainSceneElements)
         {
             obj.SetActive(true);

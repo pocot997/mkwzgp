@@ -68,6 +68,11 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
     {
         if(secendEnable)
         {
+            StopAllCoroutines();
+            for (int i = noteOffset.transform.childCount - 1; i >= 0; i--)
+            {
+                Destroy(noteOffset.transform.GetChild(i).gameObject);
+            }
             StartCoroutine(NoteController());
         }
     }
@@ -132,9 +137,9 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
         CombatEnemy currentEnemy = Managers.BattleLoader.currentEnemy;
         float currentEnemyHP = Managers.BattleLoader.enemyHP;
         CombatPlayer player = Managers.Player.playerObject.GetComponent<CombatPlayer>();
-       
 
-        while (/*noteSpawningWithDelay.Count > 0*/ Managers.BattleLoader.enemyHP > 0 && player.HitPoints > 0)
+
+        while (Managers.BattleLoader.enemyHP > 0 && player.HitPoints > 0)
         {
             enemyHealthBar.value = Managers.BattleLoader.enemyHP;
             playerHealthBar.value = player.HitPoints;
@@ -143,7 +148,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
             {
                 counter++;
                 InstantiateNote();
-                //noteSpawningWithDelay.RemoveAt(0);
+
                 if (counter > maxCounter)
                 {
                     counter = 0;
