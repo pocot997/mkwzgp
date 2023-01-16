@@ -13,6 +13,7 @@ public class BattleLoaderManager : MonoBehaviour, IGameManager
 
     [SerializeField] internal CombatEnemy currentEnemy;
     internal float enemyHP;
+    internal bool isInBattle = false;
 
     public void Startup()
     {

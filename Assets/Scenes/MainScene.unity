@@ -5312,7 +5312,7 @@ PrefabInstance:
     - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
       propertyPath: currentEnemy
       value: 
-      objectReference: {fileID: 5230286526862572532}
+      objectReference: {fileID: 0}
     - target: {fileID: 2805575988372114340, guid: f6405bd7bbbf66c4387e1870b91f976c, type: 3}
       propertyPath: mainSceneElements.Array.size
       value: 4
@@ -15961,17 +15961,6 @@ PrefabInstance:
       objectReference: {fileID: 2078926487309534007}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8188761cf26057442a8fb49d18082365, type: 3}
---- !u!114 &5230286526862572532 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5230286528011649944, guid: 8188761cf26057442a8fb49d18082365, type: 3}
-  m_PrefabInstance: {fileID: 5230286526862572531}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 272598a255c40774a968d1bae236510f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5359923293844537072
 MonoBehaviour:
   m_ObjectHideFlags: 0

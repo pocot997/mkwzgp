@@ -71,6 +71,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
             StopAllCoroutines();
             for (int i = noteOffset.transform.childCount - 1; i >= 0; i--)
             {
+                Debug.LogError("Xd");
                 Destroy(noteOffset.transform.GetChild(i).gameObject);
             }
             StartCoroutine(NoteController());
@@ -144,7 +145,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
             enemyHealthBar.value = Managers.BattleLoader.enemyHP;
             playerHealthBar.value = player.HitPoints;
 
-            if (noteSpawningWithDelay[counter] <= MidiManagers.gameAudio.audioSource.time)
+            if (noteSpawningWithDelay[counter] <= MidiManagers.gameAudio.audioSource.time && Managers.BattleLoader.isInBattle)
             {
                 counter++;
                 InstantiateNote();
@@ -163,6 +164,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
         }
 
         secendEnable = true;
+        Managers.BattleLoader.isInBattle = false;
 
         if (player.HitPoints <= 0)
         {

@@ -10,6 +10,7 @@ public class CombatEnemy : CombatCharacter
     {
         if (onEnterCombat != null)
         {
+            Managers.BattleLoader.isInBattle = true;
             onEnterCombat(this);
         }
     }
