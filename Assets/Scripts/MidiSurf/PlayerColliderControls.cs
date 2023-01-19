@@ -13,6 +13,8 @@ public class PlayerColliderControls : MonoBehaviour
     { 
         middleTrackPlayerPosition = transform.localPosition;
         middleTrackPlayerPosition.y = MidiManagers.globalPathCoordinates.trackShiftY;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()

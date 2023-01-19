@@ -1,3 +1,4 @@
+using DVSN.Enemy;
 using DVSN.GameManagment;
 using System.Collections.Generic;
 
@@ -17,7 +18,7 @@ public class CombatEnemy : CombatCharacter
 
     public override void Die()
     {
-        Destroy(this.gameObject);
+        GetComponent<EnemyAi>().Die();
     }
 
     public override void ChangeHitPoints(float value)

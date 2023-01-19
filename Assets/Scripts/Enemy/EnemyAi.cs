@@ -122,6 +122,18 @@ namespace DVSN.Enemy
             }
         }
 
+        public void Die()
+        {
+            foreach (GameObject dropItem in dropItems)
+            {
+                Instantiate(dropItem, transform.position, Quaternion.identity);
+            }
+
+            Managers.Quest.CheckForAllQuests(enemyElement);
+
+            Invoke(nameof(DestroyEnemy), 0.5f);
+        }
+
         private void DestroyEnemy()
         {
             Destroy(gameObject);

@@ -13,6 +13,12 @@ namespace DVSN.Player
         bool isAlreadyCasting = false;
         bool isSpellReleased = false;
 
+        void Start()
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         void Update()
         {
             if (Managers.Spellcasting.isAbleToCast && !effectBlockCasting && !Managers.Spellcasting.effectBlockCasting)

@@ -15,6 +15,6 @@ MonoBehaviour:
   elementsToUnlock: []
   elementsToLock: []
   questName: Skradziona mamona 1
-  description: 
+  description: "Jinn po\u017Cyczy\u0142 ostatnio troch\u0119 mamom"
   experienceReward: 0
-  finishingDialogue: {fileID: 0}
+  finishingDialogue: {fileID: 11400000, guid: 213bc268581aff34a90d8f347ab59392, type: 2}

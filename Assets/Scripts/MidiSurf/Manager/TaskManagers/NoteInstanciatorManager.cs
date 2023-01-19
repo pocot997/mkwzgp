@@ -142,6 +142,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 
         while (Managers.BattleLoader.enemyHP > 0 && player.HitPoints > 0)
         {
+            Debug.LogError(player.HitPoints);
             enemyHealthBar.value = Managers.BattleLoader.enemyHP;
             playerHealthBar.value = player.HitPoints;
 
@@ -168,7 +169,7 @@ public class NoteInstanciatorManager : MonoBehaviour, ManagerInterface
 
         if (player.HitPoints <= 0)
         {
-            // player lose here. DOnt know what to do
+           Managers.Player.RestartGame();
         }
 
         FinishBattleWithPlayer();

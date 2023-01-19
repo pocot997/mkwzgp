@@ -16,7 +16,7 @@ public class NoteController : MonoBehaviour
 
         if (transform.localPosition.z <= -1)
         {
-            Managers.Player.playerObject.GetComponent<CombatPlayer>().ChangeHitPoints(-10);
+            Managers.Player.playerObject.GetComponent<CombatPlayer>().ChangeHitPoints(-3);
             Destroy(this.gameObject);
         }
     }
